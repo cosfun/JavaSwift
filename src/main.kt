@@ -1,24 +1,38 @@
+import java.util.*
+
 /**
- * Created by Administrator on 2017/4/29.
- */
+* Created by Administrator on 2017/4/29.
+*/
 
 var target=CharArray(0)
 fun main(arg:Array<String>){
-    val input="val a=3"
+    val scanner = Scanner(System.`in`)
+    do {
+        print("scanner >")
+        exeCute(scanner.next())
+    }while (true)
+
+
+}
+fun exeCute(input: String){
+    init()
     target=(input+" ").toCharArray()
     while (start<target.size-1) {
         analysis()
     }
+    createAst()
 }
-
-
+fun init(){
+    initScanner()
+    initAst()
+}
 fun analysisPrint(text:List<String>){
-   var anser= "[";
+   var answer= "["
     text.forEachIndexed { index, s ->
-            anser += "'" + s + "'"
+            answer += "'$s'"
             if (index < text.size - 1)
-                anser += ","
+                answer += ","
     }
-    anser+="]"
-   println(anser)
+    answer+="]"
+   println(answer)
 }
