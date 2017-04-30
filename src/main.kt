@@ -2,20 +2,16 @@
  * Created by Administrator on 2017/4/29.
  */
 
-
+var target=CharArray(0)
 fun main(arg:Array<String>){
-      analysisPrint(analysis("(begin (def a 3) (* a a))"))
+    val input="val a=3"
+    target=(input+" ").toCharArray()
+    while (start<target.size-1) {
+        analysis()
+    }
 }
 
-fun analysis(text: String): ArrayList<String> {
-    val tokens = text.replace("("," ( ").replace(")"," ) ").split("\\s+|\t|\r|\n".toRegex())
-    val anser= ArrayList<String>()
-    tokens.forEach {
-        if(it!="")
-            anser.add(it)
-    }
-    return anser
-}
+
 fun analysisPrint(text:List<String>){
    var anser= "[";
     text.forEachIndexed { index, s ->
@@ -25,7 +21,4 @@ fun analysisPrint(text:List<String>){
     }
     anser+="]"
    println(anser)
-}
-fun scaner(tokens:ArrayList<String>){
-
 }
