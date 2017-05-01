@@ -5,11 +5,12 @@ import java.util.*
 */
 
 var target=CharArray(0)
+val runtime_root=Runtime()
 fun main(arg:Array<String>){
     val scanner = Scanner(System.`in`)
     do {
-        print("scanner >")
-        exeCute(scanner.next())
+        print("Java++ >")
+        exeCute(scanner.nextLine())
     }while (true)
 
 
@@ -20,7 +21,7 @@ fun exeCute(input: String){
     while (start<target.size-1) {
         analysis()
     }
-    createAst()
+    createAst(runtime_root,tokens)
 }
 fun init(){
     initScanner()
